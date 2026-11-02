@@ -71,8 +71,8 @@ def main():
     # Fase 3: evaluacion con LOOCV -------------------------------------------
     print("2. Evaluando 25 configuraciones con LOOCV...")
     tabla, puntajes = evaluacion.evaluar_todas(X, y)
-    guardar(tabla.round(3), "16_2_resultados_loocv.csv")
-    guardar(linea_base(tabla, trivial).round(3), "16_1_linea_base.csv")
+    guardar(tabla.round(4), "16_2_resultados_loocv.csv")
+    guardar(linea_base(tabla, trivial).round(4), "16_1_linea_base.csv")
     elegida = evaluacion.seleccionar(tabla)
     empates = evaluacion.empatadas(tabla, elegida)
     print(f"   Seleccionada: {elegida['Modelo']} + {elegida['Estrategia']} "
@@ -94,13 +94,13 @@ def main():
         print("3. Midiendo estabilidad (3 pliegues x 30 repeticiones)...")
         nombres = list(df.loc[df["y"] == 1, "NOM_LOC"])
         tabla_est, frec = evaluacion.estabilidad_todas(X, y, nombres)
-        guardar(tabla_est.round(3), "16_2_estabilidad.csv")
-        guardar(frec.round(3), "16_2_frecuencia_deteccion.csv")
+        guardar(tabla_est.round(4), "16_2_estabilidad.csv")
+        guardar(frec.round(4), "16_2_frecuencia_deteccion.csv")
 
     # Fase 4: interpretabilidad -----------------------------------------------
     print("4. Interpretabilidad...")
     coef = interpretabilidad.coeficientes_rl(X, y)
-    guardar(coef.round(3), "16_3_coeficientes_rl.csv")
+    guardar(coef.round(4), "16_3_coeficientes_rl.csv")
     ens = mejor_ensemble(tabla)
     shap_tabla = interpretabilidad.shap_ensemble(X, y, ens["Modelo"], ens["Estrategia"])
     guardar(shap_tabla.round(4), "16_3_shap.csv")
@@ -118,10 +118,10 @@ def main():
         "desbalance": desbalance,
         "clasificador_trivial": trivial,
         "configuracion_seleccionada": elegida.to_dict(),
-        "configuraciones_empatadas": empates.round(3).to_dict(orient="records"),
+        "configuraciones_empatadas": empates.round(4).to_dict(orient="records"),
         "configuraciones_sobre_EB_minima": int((tabla["EB"] >= config.EB_MINIMA).sum()),
         "ensemble_para_shap": f"{ens['Modelo']} + {ens['Estrategia']}",
-        "subconjunto_reducido": {k: round(float(v), 3) for k, v in reducido.items()},
+        "subconjunto_reducido": {k: round(float(v), 4) for k, v in reducido.items()},
         "H1": {"cumple": h1, "detalle": h1_det},
         "H2": {"cumple": h2, "detalle": h2_det},
         "medianas_municipales": referencia.to_dict(),

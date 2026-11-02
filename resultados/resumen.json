@@ -32,12 +32,12 @@
     {
       "Modelo": "RL",
       "Estrategia": "ROS",
-      "PR_AUC": 0.948
+      "PR_AUC": 0.9484
     },
     {
       "Modelo": "RL",
       "Estrategia": "ADASYN",
-      "PR_AUC": 0.915
+      "PR_AUC": 0.9151
     }
   ],
   "configuraciones_sobre_EB_minima": 14,
@@ -47,14 +47,14 @@
     "FN": 3.0,
     "FP": 3.0,
     "VN": 47.0,
-    "Exactitud": 0.893,
+    "Exactitud": 0.8929,
     "Recall": 0.5,
     "Precision": 0.5,
     "F1": 0.5,
     "F2": 0.5,
     "EB": 0.72,
-    "PR_AUC": 0.688,
-    "ROC_AUC": 0.943
+    "PR_AUC": 0.6875,
+    "ROC_AUC": 0.9433
   },
   "H1": {
     "cumple": true,
