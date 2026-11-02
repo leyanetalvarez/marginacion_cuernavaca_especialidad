@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Datos externos pesados (se descargan del INEGI)
+iter_*_cpv2020_csv.zip
+
+# Sistema
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/

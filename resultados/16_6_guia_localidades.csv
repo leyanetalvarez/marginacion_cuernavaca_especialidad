@@ -1,0 +1,8 @@
+﻿CVE_LOC,Localidad,Habitantes,Grado,Probabilidad,Verificar_en_campo,Carencias,Rubro_sugerido
+170070081,Loma del Cerrado,7,Alto,1.0,False,Sin refrigerador (100.0 %); Sin energía eléctrica (57.1 %); Sin agua entubada (57.1 %),"electrificación, agua potable"
+170070062,La Carpa,60,Medio,1.0,False,Sin agua entubada (68.3 %); Sin educación básica (56.4 %); Piso de tierra (26.7 %),"agua potable, coordinación con programas educativos, mejoramiento de vivienda"
+170070140,Loma de Popotla,28,Medio,0.97,False,Sin refrigerador (39.3 %); Sin educación básica (61.1 %); Piso de tierra (25.0 %),"coordinación con programas educativos, mejoramiento de vivienda"
+170070147,El Paraíso,21,Medio,0.92,False,Sin agua entubada (76.2 %); Hacinamiento (61.9 %); Sin refrigerador (23.8 %),"agua potable, mejoramiento de vivienda"
+170070052,Tlachichilpa,21,Bajo,0.91,True,Sin educación básica (62.5 %); Analfabetismo (18.8 %); Sin refrigerador (19.0 %),coordinación con programas educativos
+170070092,El Cerrito (Cuautenco),132,Medio,0.73,False,Hacinamiento (65.9 %); Piso de tierra (22.0 %); Sin educación básica (46.2 %),"mejoramiento de vivienda, coordinación con programas educativos"
+170070085,Rancho los Ciruelos,21,Medio,0.51,False,Sin agua entubada (52.4 %); Sin educación básica (64.7 %); Hacinamiento (52.4 %),"agua potable, coordinación con programas educativos, mejoramiento de vivienda"

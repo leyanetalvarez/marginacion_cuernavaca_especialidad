@@ -1,0 +1,135 @@
+{
+  "desbalance": {
+    "n": 56,
+    "positivos": 6,
+    "negativos": 50,
+    "razon_desbalance": 8.33,
+    "porcentaje_positivos": 10.7
+  },
+  "clasificador_trivial": {
+    "Exactitud": 0.893,
+    "Recall": 0.0,
+    "Exactitud_balanceada": 0.5
+  },
+  "configuracion_seleccionada": {
+    "Modelo": "RL",
+    "Estrategia": "ROS",
+    "Respaldos": 0,
+    "VP": 6,
+    "FN": 0,
+    "FP": 1,
+    "VN": 49,
+    "Exactitud": 0.9821428571428571,
+    "Recall": 1.0,
+    "Precision": 0.8571428571428571,
+    "F1": 0.9230769230769231,
+    "F2": 0.967741935483871,
+    "EB": 0.99,
+    "PR_AUC": 0.9484126984126984,
+    "ROC_AUC": 0.9933333333333333
+  },
+  "configuraciones_empatadas": [
+    {
+      "Modelo": "RL",
+      "Estrategia": "ROS",
+      "PR_AUC": 0.948
+    },
+    {
+      "Modelo": "RL",
+      "Estrategia": "ADASYN",
+      "PR_AUC": 0.915
+    }
+  ],
+  "configuraciones_sobre_EB_minima": 14,
+  "ensemble_para_shap": "RF + pesos",
+  "subconjunto_reducido": {
+    "VP": 3.0,
+    "FN": 3.0,
+    "FP": 3.0,
+    "VN": 47.0,
+    "Exactitud": 0.893,
+    "Recall": 0.5,
+    "Precision": 0.5,
+    "F1": 0.5,
+    "F2": 0.5,
+    "EB": 0.72,
+    "PR_AUC": 0.688,
+    "ROC_AUC": 0.943
+  },
+  "H1": {
+    "cumple": true,
+    "detalle": {
+      "RF": {
+        "Recall_sin_tratamiento": 0.3333333333333333,
+        "Mejor_Recall_con_tratamiento": 0.6666666666666666,
+        "Aumento_pp": 33.3
+      },
+      "XGB": {
+        "Recall_sin_tratamiento": 0.3333333333333333,
+        "Mejor_Recall_con_tratamiento": 0.5,
+        "Aumento_pp": 16.7
+      }
+    }
+  },
+  "H2": {
+    "cumple": false,
+    "detalle": {
+      "top_coeficientes": [
+        "OVSAE",
+        "OVHAC",
+        "OVPT"
+      ],
+      "top_shap": [
+        "OVSAE",
+        "OVSREF",
+        "SBASC"
+      ],
+      "comunes": [
+        "OVSAE"
+      ],
+      "n_comunes": 1
+    }
+  },
+  "medianas_municipales": {
+    "Analfabetismo": 3.7,
+    "Sin educación básica": 32.1,
+    "Sin drenaje": 0.0,
+    "Sin energía eléctrica": 0.0,
+    "Sin agua entubada": 4.7,
+    "Piso de tierra": 3.2,
+    "Hacinamiento": 33.4,
+    "Sin refrigerador": 7.0
+  },
+  "estabilidad_descriptiva": {
+    "AD": {
+      "mas_estable": "ADASYN",
+      "DE_min": 0.161,
+      "menos_estable": "ROS",
+      "DE_max": 0.178
+    },
+    "RF": {
+      "mas_estable": "ninguna",
+      "DE_min": 0.12,
+      "menos_estable": "ROS",
+      "DE_max": 0.168
+    },
+    "RL": {
+      "mas_estable": "ADASYN",
+      "DE_min": 0.134,
+      "menos_estable": "ninguna",
+      "DE_max": 0.177
+    },
+    "SVM": {
+      "mas_estable": "ninguna",
+      "DE_min": 0.129,
+      "menos_estable": "ADASYN",
+      "DE_max": 0.189
+    },
+    "XGB": {
+      "mas_estable": "SMOTE",
+      "DE_min": 0.147,
+      "menos_estable": "ROS",
+      "DE_max": 0.201
+    }
+  }
+}
