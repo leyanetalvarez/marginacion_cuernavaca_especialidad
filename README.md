@@ -55,7 +55,7 @@ El estudio compara **5 clasificadores** y **5 condiciones de tratamiento del des
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/USUARIO/REPOSITORIO.git
+git clone https://github.com/leyanetalvarez/marginacion_cuernavaca_especialidad.git
 cd REPOSITORIO
 
 # 2. (Opcional, recomendado) crear un entorno virtual
