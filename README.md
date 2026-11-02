@@ -77,7 +77,10 @@ pip install -r requirements.txt
 ### Ejecutar el estudio completo
 
 ```bash
+# Windows:
 python ejecutar.py
+# Linux / macOS:
+python3 ejecutar.py
 ```
 
 Tarda alrededor de **20 minutos**, sobre todo por la evaluación de estabilidad (90 particiones × 25 configuraciones).
@@ -86,10 +89,10 @@ Tarda alrededor de **20 minutos**, sobre todo por la evaluación de estabilidad 
 
 | Comando | Qué hace |
 |---|---|
-| `python ejecutar.py` | Estudio completo |
-| `python ejecutar.py --sin-estabilidad` | Omite la validación repetida (≈ 8 minutos) |
-| `python ejecutar.py --datos ruta/otro.xlsx` | Usa otro archivo de datos con la misma estructura |
-| `python ejecutar.py --iter iter_17_cpv2020_csv.zip` | Además genera el mapa |
+| `python ejecutar.py` / `python3 ejecutar.py` | Estudio completo |
+| `python ejecutar.py --sin-estabilidad` / `python3 ejecutar.py --sin-estabilidad` | Omite la validación repetida (≈ 8 minutos) |
+| `python ejecutar.py --datos ruta/otro.xlsx` / `python3 ejecutar.py --datos ruta/otro.xlsx` | Usa otro archivo de datos con la misma estructura |
+| `python ejecutar.py --iter iter_17_cpv2020_csv.zip` / `python3 ejecutar.py --iter iter_17_cpv2020_csv.zip` | Además genera el mapa |
 
 ### Generar el mapa
 
@@ -97,7 +100,7 @@ El mapa necesita las coordenadas de las localidades, que vienen en los **Princip
 
 1. Descarga el archivo de Morelos en formato CSV desde el sitio del INEGI (*Censo de Población y Vivienda 2020 → Datos abiertos → ITER → Morelos*). El archivo se llama `iter_17_cpv2020_csv.zip`.
 2. Colócalo en la carpeta del proyecto, **sin descomprimir**.
-3. Ejecuta `python ejecutar.py --iter iter_17_cpv2020_csv.zip`, o solo el mapa con `python mapa.py iter_17_cpv2020_csv.zip` (requiere haber corrido antes `ejecutar.py`).
+3. Ejecuta `python ejecutar.py --iter iter_17_cpv2020_csv.zip` (Windows) o `python3 ejecutar.py --iter iter_17_cpv2020_csv.zip` (Linux/macOS), o solo el mapa con `python mapa.py iter_17_cpv2020_csv.zip` / `python3 mapa.py iter_17_cpv2020_csv.zip` (requiere haber corrido antes `ejecutar.py`).
 
 ---
 
