@@ -55,7 +55,7 @@ def grafica_shap():
     fig, ax = plt.subplots(figsize=(4.4, 2.5))
     ax.barh(sh.Variable, sh.SHAP_medio_abs, color=colores)
     for y, v in enumerate(sh.SHAP_medio_abs):
-        ax.text(v + 0.002, y, f"{v:.3f}", va="center", fontsize=7)
+        ax.text(v + 0.002, y, f"{round(v + 1e-9, 3):.3f}", va="center", fontsize=7)
     ax.set_xlabel("Valor SHAP medio absoluto", fontsize=8.5)
     ax.tick_params(labelsize=8)
     ax.grid(axis="x", color="#e5e5e5")
