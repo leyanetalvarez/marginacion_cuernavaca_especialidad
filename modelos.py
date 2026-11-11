@@ -23,19 +23,22 @@ import config
 
 class SeleccionPorCoeficientes(BaseEstimator, TransformerMixin):
     """Conserva las k variables con mayor |coeficiente| de una Regresion
-    Logistica ponderada ajustada con los datos de entrenamiento.
+    Logistica ajustada con ROS sobre los datos de entrenamiento.
 
     Se usa en el analisis del subconjunto reducido. Como forma parte del
     pipeline, la eleccion de variables se repite en cada pliegue y no usa
     la localidad de prueba.
     """
 
-    def __init__(self, k=config.N_VARIABLES_REDUCIDAS):
+    def __init__(self, k=config.N_VARIABLES_REDUCIDAS, random_state=config.SEMILLA):
         self.k = k
+        self.random_state = random_state
 
     def fit(self, X, y):
-        Z = StandardScaler().fit_transform(X)
-        rl = LogisticRegression(class_weight="balanced", max_iter=1000).fit(Z, y)
+        X_res, y_res = RandomOverSampler(
+            random_state=self.random_state
+        ).fit_resample(X, y)
+        rl = LogisticRegression(max_iter=1000).fit(X_res, y_res)
         self.indices_ = np.argsort(-np.abs(rl.coef_[0]))[: self.k]
         return self
 
@@ -84,7 +87,7 @@ def construir_pipeline(modelo, estrategia, semilla, n_neg, n_pos, reducido=False
     if modelo in ("RL", "SVM"):  # sensibles a la escala
         pasos.append(("escala", StandardScaler()))
     if reducido:
-        pasos.append(("seleccion", SeleccionPorCoeficientes()))
+        pasos.append(("seleccion", SeleccionPorCoeficientes(random_state=semilla)))
     muestreador = crear_muestreador(estrategia, semilla)
     if muestreador is not None:
         pasos.append(("muestreo", muestreador))

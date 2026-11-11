@@ -19,7 +19,7 @@ El estudio compara **5 clasificadores** y **5 condiciones de tratamiento del des
 | Estrategias | Sin tratamiento, ponderación de clases, ROS, SMOTE, ADASYN |
 | Validación | Validación cruzada dejando uno fuera (LOOCV), sin fuga de información |
 | Estabilidad | Validación cruzada estratificada de 3 pliegues, repetida 30 veces |
-| Interpretabilidad | Coeficientes de Regresión Logística y valores SHAP |
+| Interpretabilidad | Coeficientes de Regresión Logística con ROS y valores SHAP del ensemble |
 
 **Resultado principal:** la Regresión Logística con ROS detectó las 6 localidades de interés con un solo falso positivo (Recall = 1.00, exactitud balanceada = 0.99).
 

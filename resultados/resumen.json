@@ -43,18 +43,18 @@
   "configuraciones_sobre_EB_minima": 14,
   "ensemble_para_shap": "RF + pesos",
   "subconjunto_reducido": {
-    "VP": 3.0,
-    "FN": 3.0,
+    "VP": 2.0,
+    "FN": 4.0,
     "FP": 3.0,
     "VN": 47.0,
-    "Exactitud": 0.8929,
-    "Recall": 0.5,
-    "Precision": 0.5,
-    "F1": 0.5,
-    "F2": 0.5,
-    "EB": 0.72,
-    "PR_AUC": 0.6875,
-    "ROC_AUC": 0.9433
+    "Exactitud": 0.875,
+    "Recall": 0.3333,
+    "Precision": 0.4,
+    "F1": 0.3636,
+    "F2": 0.3448,
+    "EB": 0.6367,
+    "PR_AUC": 0.6319,
+    "ROC_AUC": 0.94
   },
   "H1": {
     "cumple": true,

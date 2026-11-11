@@ -1,6 +1,6 @@
 """Interpretabilidad de los modelos (Fase 4 de la tesis).
 
-- Coeficientes y razones de momios de la Regresion Logistica ponderada.
+- Coeficientes y razones de momios de la Regresion Logistica con ROS.
 - Valores SHAP del mejor modelo de ensemble.
 - Comparacion de las tres variables principales (hipotesis H2).
 
@@ -10,17 +10,17 @@ sirven para interpretar, no para medir el desempeno.
 import numpy as np
 import pandas as pd
 import shap
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
 
 import config
 from modelos import construir_pipeline
 
 
-def coeficientes_rl(X, y):
+def coeficientes_rl(X, y, semilla=config.SEMILLA):
     """Coeficientes estandarizados y razon de momios por cada DE del indicador."""
-    Z = StandardScaler().fit_transform(X)
-    rl = LogisticRegression(class_weight="balanced", max_iter=1000).fit(Z, y)
+    n_neg, n_pos = int((y == 0).sum()), int((y == 1).sum())
+    pipe = construir_pipeline("RL", "ROS", semilla, n_neg, n_pos)
+    pipe.fit(X, y)
+    rl = pipe.named_steps["clf"]
     coef = rl.coef_[0]
     tabla = pd.DataFrame({
         "Variable": config.VARIABLES,
